@@ -25,6 +25,7 @@ If you have a direct link template, you can simply provide the token for the tem
 
 ```html
 <script setup lang="ts">
+  import { ref } from 'vue';
   import { EmbedDirectTemplate } from '@documenso/embed-vue';
 
   const token = ref('YOUR_TOKEN_HERE'); // Replace with the actual token
@@ -56,14 +57,16 @@ If you have a direct link template, you can simply provide the token for the tem
 
 If you have a signing token, you can provide it to the `EmbedSignDocument` component.
 
-```jsx
-import { EmbedSignDocument } from '@documenso/embed-vue';
+```html
+<script setup lang="ts">
+  import { EmbedSignDocument } from '@documenso/embed-vue';
 
-const MyEmbeddingComponent = () => {
   const token = 'YOUR_TOKEN_HERE'; // Replace with the actual token
+</script>
 
-  return <EmbedSignDocument token={token} />;
-};
+<template>
+  <EmbedSignDocument :token="token" />
+</template>
 ```
 
 #### Props
